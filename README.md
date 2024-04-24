@@ -1,4 +1,5 @@
-Using vite:\n
+Using vite:
+
   npm create vite@latest
   (name) + vanilla + JS
   cd (name)
