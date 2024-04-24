@@ -20,14 +20,28 @@ L.tileLayer('https://{s}.tile.thunderforest.com/pioneer/{z}/{x}/{y}.png?apikey={
 	maxZoom: 22
 }).addTo(map);
 
+var myIcon = L.icon({
+    iconUrl: "x.png",
+    iconSize: [35, 35],
+    // iconAnchor: [22, 94],
+    // popupAnchor: [-3, -76],
+    // shadowUrl: 'my-icon-shadow.png',
+    // shadowSize: [68, 95],
+    // shadowAnchor: [22, 94]
+})
+
+L.Marker.prototype.options.icon = myIcon;
 
 // map.flyTo(animationBounds);
 
 // map.dragging.disable();
 map.setMaxBounds(bounds);
-// var Thunderforest_Pioneer = L.tileLayer('https://{s}.tile.thunderforest.com/pioneer/{z}/{x}/{y}.png?apikey={apikey}', {
-// 	attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-// 	apikey: '<your apikey>',
-// 	maxZoom: 22
-// });
-// Thunderforest_Pioneer.addTo(map);
+
+map.on("click", function(e) {
+    var marker = L.marker([e.latlng.lat, e.latlng.lng]).addTo(map);
+})
+
+// map.on("click", onMapClick(e));
+// function onMapClick(e) {
+//     var marker = L.marker(e.latLng).addTo(map);
+// }
