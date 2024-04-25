@@ -6,12 +6,25 @@ var animationCorner1 = L.latLng(40.992416, -4.243838);
 var animationCorner2 = L.latLng(40.893644, -4.021705);
 animationBounds = L.latLngBounds(animationCorner1, animationCorner2);
 
+function openNav() {
+    document.getElementById("mySidenav").style.width = "150px";
+    document.getElementById("button").style.visibility = "hidden";
+
+  }
+  
+  /* Set the width of the side navigation to 0 */
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("button").style.visibility = "visible";
+  }
+
 
 var map = L.map('map', {
     center: [40.942902, -4.1088],
     // center: [39, 34],
     zoom: 13,
-    minZoom: 13
+    minZoom: 13,
+    zoomControl: false
 });
 
 L.tileLayer('https://{s}.tile.thunderforest.com/pioneer/{z}/{x}/{y}.png?apikey={apikey}', {
@@ -32,9 +45,11 @@ var myIcon = L.icon({
 
 L.Marker.prototype.options.icon = myIcon;
 
-// map.flyTo(animationBounds);
 
-// map.dragging.disable();
+L.control.zoom({
+    position: 'topright'
+}).addTo(map);
+
 map.setMaxBounds(bounds);
 
 map.on("click", function(e) {
