@@ -14,8 +14,8 @@ const App = () => {
     getData()
   }, []);
   return (
-    // <div>{data}</div>
-    console.log(data)
+    <div>{data}</div>
+    // console.log(data)
   )
 }
 
