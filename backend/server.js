@@ -8,7 +8,7 @@ app.use(cors());
 
 // const fs = require("fs");
 const fileName = "data.json";
-var data = 'dd';
+var data = 'it works!!!';
 
 if(fs.existsSync(fileName)) {
    console.log("File exists");
