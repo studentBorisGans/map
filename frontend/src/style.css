@@ -19,22 +19,27 @@ body {
 }
 
 #img {
-    width: 25px;
-    height: 25px;
+    width: 35px;
+    height: 35px;
 }
 
+#mySidenav{
+  width: var(width);
+}
 
 .sidenav {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
+    height: 50%; /* 100% Full-height */
+    width: 150; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
     z-index: 500; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
     background-color: #111; /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /*Place content 60px from the top */
+    padding-top: 15px; /*Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    border-radius: 0px 0px 30px 0px;
+    border: 2px solid white;
   }
   
   /* The navigation menu links */
