@@ -88,4 +88,3 @@ const MapClickHandler = ({ onClick }) => {
 };
 
 map.render(<MyMap/>)
-// ReactDOM.render(<MyMap />, document.getElementById('map'));
